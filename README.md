@@ -24,8 +24,8 @@ mapSeries(array, iterator[, thisArg]).then(function (newArray) {
 })
 ```
 
-* **`array`**: An array of value or promises. All promises are resolved
-  before running the iterator. If any are rejected, `mapSeries` returns a
+* **`array`**: An array of values or promises. All promises are resolved
+  before running the `iterator`. If any are rejected, `mapSeries` returns a
   rejected promise immediately and does not call `iterator`.
 
 * **`iterator`**: Function that returns a promise or a value for the new
