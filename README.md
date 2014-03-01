@@ -24,14 +24,12 @@ mapSeries(array, iterator[, thisArg]).then(function (newArray) {
 })
 ```
 
-* **`array`**: An array of values or promises. All promises are resolved
-  before running the `iterator`. If any are rejected, `mapSeries` returns a
-  rejected promise immediately and does not call `iterator`.
+* **`array`**: An array of values (should not be promises).
 
 * **`iterator`**: Function that returns a promise or a value for the new
   array. The `iterator` will be called once for each element. If `iterator`
   returns a promise, then `iterator` will only be called for the next element
-  once the promise is fulfilled. If the promise is rejected or `iterator`
+  once that promise is fulfilled. If the promise is rejected or `iterator`
   throws an error, iteration will stop immediately and `mapSeries` returns a
   rejected promise. The `iterator` function receives three arguments:
 
@@ -39,7 +37,6 @@ mapSeries(array, iterator[, thisArg]).then(function (newArray) {
 
     * **`index`**: The current index in the array.
 
-    * **`nonPromiseArray`**: A copy of the original `array` with all promises
-      resolved.
+    * **`array`**: The original `array` argument.
 
 * **`thisArg`** (optional): Value to use as `this` when executing `iterator`.
