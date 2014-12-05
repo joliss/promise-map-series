@@ -1,17 +1,16 @@
-var RSVP = require('rsvp')
+var Promise = require('rsvp').Promise;
 
-module.exports = function promiseMapSeries (array, iterator, thisArg) {
-  var results = new Array(array.length)
-  var index = 0
-  return array.reduce(function (promise, item) {
-      return promise.then(function () {
-          return iterator.call(thisArg, item, index, array)
-        })
-        .then(function (result) {
-          results[index++] = result
-        })
-    }, RSVP.resolve())
-    .then(function () {
-      return results
-    })
+module.exports = function sequence(array, iterator, thisArg) {
+  var length = array.length
+  var current = Promise.resolve()
+  var results = new Array(length)
+  var cb = arguments.length > 2 ? iterator.bind(thisArg) : iterator
+
+  for (var i = 0; i < length; ++i) {
+    current = results[i] = current.then(function(i) {
+      return cb(array[i], i, array)
+    }.bind(undefined, i))
+  }
+
+  return Promise.all(results)
 }
