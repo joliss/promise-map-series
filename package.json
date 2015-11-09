@@ -10,7 +10,7 @@
     "url": "https://github.com/joliss/promise-map-series"
   },
   "dependencies": {
-    "rsvp": "^3.0.14"
+    "any-promise": "^0.1.0"
   },
   "devDependencies": {
     "tape": "^2.5.0"

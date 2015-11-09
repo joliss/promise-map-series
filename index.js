@@ -1,4 +1,4 @@
-var Promise = require('rsvp').Promise;
+var Promise = require('any-promise');
 
 module.exports = function sequence(array, iterator, thisArg) {
   var length = array.length
