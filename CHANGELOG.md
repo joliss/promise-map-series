@@ -1,5 +1,7 @@
 # master
 
+# 0.2.2
+
 * Use better function name for clearer stack traces
 
 # 0.2.1
