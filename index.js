@@ -1,6 +1,6 @@
 var Promise = require('rsvp').Promise;
 
-module.exports = function sequence(array, iterator, thisArg) {
+module.exports = function promiseMapSeries(array, iterator, thisArg) {
   var length = array.length
   var current = Promise.resolve()
   var results = new Array(length)

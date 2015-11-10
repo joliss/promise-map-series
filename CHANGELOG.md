@@ -1,5 +1,7 @@
 # master
 
+* Use better function name for clearer stack traces
+
 # 0.2.1
 
 * Improve performance
