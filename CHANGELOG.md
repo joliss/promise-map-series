@@ -1,5 +1,7 @@
 # master
 
+# 0.2.3
+
 * Exclude some files from npm distribution
 
 # 0.2.2
