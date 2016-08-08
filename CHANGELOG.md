@@ -1,5 +1,7 @@
 # master
 
+* Exclude some files from npm distribution
+
 # 0.2.2
 
 * Use better function name for clearer stack traces
