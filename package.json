@@ -4,9 +4,6 @@
   "version": "0.2.3",
   "author": "Jo Liss <joliss42@gmail.com>",
   "main": "index.js",
-  "files": [
-    "index.js"
-  ],
   "license": "MIT",
   "repository": {
     "type": "git",
