@@ -1,5 +1,10 @@
 # master
 
+* [BREAKING] Drop support for any node but `10.* || >= 12.*`
+* Use async/await directly
+* Drop RSVP
+* Upgrade Test Dependencies
+
 # 0.2.3
 
 * Exclude some files from npm distribution
