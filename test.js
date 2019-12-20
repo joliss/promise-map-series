@@ -1,16 +1,13 @@
-var test = require('tape')
-var RSVP = require('rsvp')
-var mapSeries = require('./index')
-
-
+const test = require('tape')
+const mapSeries = require('./index')
 
 test('mapSeries', function (t) {
   t.test('iterator is called in sequence for each item', function (t) {
     t.plan(6)
-    var seq = 0
+    let seq = 0
     mapSeries([0, 1], function (item) {
         t.equal(seq, item)
-        return new RSVP.Promise(function (resolve, reject) {
+        return new Promise(function (resolve, reject) {
           setTimeout(function () {
             t.equal(seq++, item)
             resolve(item === 0 ? 'foo' : 'bar')
@@ -25,7 +22,7 @@ test('mapSeries', function (t) {
 
   t.test('is rejected on first rejection', function (t) {
     t.plan(2)
-    var errorObject = new Error('rejected')
+    let errorObject = new Error('rejected')
     mapSeries([0, 1], function (item) {
         t.pass('is called once')
         throw errorObject
@@ -39,7 +36,7 @@ test('mapSeries', function (t) {
 
   t.test('passes index and array argument to iterator', function (t) {
     t.plan(5)
-    var arr = [42, 43]
+    let arr = [42, 43]
     mapSeries(arr, function (item, index, array) {
       t.equal(item, index + 42)
       t.equal(array, arr)
@@ -50,7 +47,7 @@ test('mapSeries', function (t) {
 
   t.test('accepts optional thisArg argument', function (t) {
     t.plan(2)
-    var obj = {}
+    let obj = {}
     mapSeries([0], function (item) {
       t.equal(this, global)
     })
