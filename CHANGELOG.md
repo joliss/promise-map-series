@@ -1,5 +1,7 @@
 # master
 
+# 0.3.0
+
 * [BREAKING] Drop support for any node but `10.* || >= 12.*`
 * Use async/await directly
 * Drop RSVP
